@@ -1,5 +1,6 @@
 const webSocketURL = "ws://localhost:8080";
 const connectionStatus = document.getElementById("connectionStatus");
+const updatesList = document.getElementById("updates");
 
 const connectToWebSocket = () => {
   const ws = new WebSocket(webSocketURL);
@@ -10,18 +11,23 @@ const connectToWebSocket = () => {
   };
 
   ws.onclose = () => {
-    connectionStatus.innerText = "Disconnected!";
+    connectionStatus.innerText = "Disconnected, please refresh!";
   }
 
-  ws.onmessage = function ({data}) {
+  ws.onmessage = function ({ data }) {
     console.log("Recieved message", data);
 
     if (data && data === "pong") {
       connectionStatus.innerText = "Connected!";
+      return;
     };
 
-    if(data.type && data.type === "update") {
-      console.log(data);
+    data = JSON.parse(data);
+
+    if (data.type && data.type === "update") {
+      let newLI = document.createElement("li");
+      newLI.appendChild(document.createTextNode(data.data));
+      updatesList.appendChild(newLI);
     }
   };
 
