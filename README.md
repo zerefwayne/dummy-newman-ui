@@ -1,5 +1,8 @@
 # Sample Demo App
 
+
+### [Video Demo](https://user-images.githubusercontent.com/28949397/112529472-4fb3e800-8dcb-11eb-8292-c88b4bfd0fe5.mp4)
+
 ## Components
 
 ### Daemon Script
