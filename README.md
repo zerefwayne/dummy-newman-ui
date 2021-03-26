@@ -22,7 +22,7 @@ Dashboard is a simple HTML, JS App that connects to Daemon if running and listen
 1.  Run `npm install` to install dependencies.
 2.  Run `npm install -g http-server-spa`.
 3.  Run `http-server-spa dummyweb index.html 8081` and head over to http://localhost:8081 to see the webpage.
-4.  Run `node dummynewman/index.js` to start the dummy newman job.
+4.  Run `cd dummynewman && node index.js` to start the dummy newman job.
 5.  It will automatically spawn the daemon and connect to it.
 
 ## Spawning the daemon
